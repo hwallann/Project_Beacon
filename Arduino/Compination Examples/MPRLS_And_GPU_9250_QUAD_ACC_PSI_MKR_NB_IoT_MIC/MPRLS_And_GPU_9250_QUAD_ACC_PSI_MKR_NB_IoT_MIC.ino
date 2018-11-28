@@ -62,18 +62,9 @@ MIT license, all text here must be included in any redistribution.
 
 /***********************************************************************
 
-Telenor NB-IoT Hello World
+Telenor NB-IoT MIC-tutorial inital code
 
-Configures NB-IoT, connects and sends a message every 15 minutes.
-
-See our guide on how to connect the EE-NBIOT-01 to Arduino:
-https://docs.nbiot.engineering/tutorials/arduino-basic.html
-
-This example is in the public domain.
-
-Read more on the Exploratory Engineering team at
-https://exploratory.engineering/
-
+Code for MKR-1500 NB-IoT modem.
 ***********************************************************************/
 
 /************************************************************
@@ -99,15 +90,29 @@ Adafruit_MPRLS mpr = Adafruit_MPRLS(RESET_PIN, EOC_PIN);
 /************************************************************
 Includes and defines of NB-IoT modem
 *************************************************************/
-#include <Udp.h>
-#include <TelenorNBIoT.h>
+#include <MKRNB.h>
+#include <Modem.h>
+#include <stdio.h>
 
-TelenorNBIoT nbiot;
+// Please enter your sensitive data in the Secret tab or arduino_secrets.h
+// PIN Number
+const char PINNUMBER[]     = "";
 
-// The remote IP address to send data packets to
-// u-blox SARA N2 does not support DNS
-IPAddress remoteIP(172, 16, 15, 14);
-int REMOTE_PORT = 1234;
+unsigned int MICUdpPort = 1234;      // local port to listen for UDP packets
+
+IPAddress MIC_IP(172, 16, 15, 14);
+
+// Initialize the library instance
+NBClient client;
+GPRS gprs;
+NB nbAccess;
+NBModem modemTest;
+String IMSI = "";
+String printOut = "";
+byte packetBuffer[512];
+
+// A UDP instance to let us send and receive packets over UDP
+NBUDP Udp;
 
 int Tries = 0;
 // Setup of microcontroller and device communictions
@@ -185,35 +190,58 @@ void setup()
   /************************************************************
   Setup of NB-IoT Modem
   *************************************************************/
+  String response = "";
+  response.reserve(100);
+
+  // Open serial communications and wait for port to open:
   Serial.begin(9600);
+  // Give Serial time to get ready...
+  delay(2000);
 
-  Serial.print("Connecting to NB-IoT module...\n");
-  nbiotSerial.begin(9600);
-  nbiot.begin();
-  if (nbiot.reboot()) {
-    Serial.println(F("Rebooted successfully"));
-  } else {
-    Serial.println(F("Error rebooting"));
+  Serial.println("Starting Arduino MKR1500 send to MIC.");
+
+  // Check if modem is ready
+  NB_NetworkStatus_t modemStatus;
+  for (modemStatus = nbAccess.begin(PINNUMBER); modemStatus != NB_READY; modemStatus = nbAccess.begin(PINNUMBER)) {
+    Serial.println("Modem not ready, retrying in 2s...");
+    delay(2000);
   }
 
-  if (nbiot.online()) {
-    Serial.println(F("Radio turned on"));
-  } else {
-    Serial.println(F("Unable to turn radio on"));
-  }
-  /*
-   * You neeed the IMEI and IMSI when setting up a device in our developer
-   * platform: https://nbiot.engineering
-   * 
-   * See guide for more details on how to get started:
-   * https://docs.nbiot.engineering/tutorials/getting-started.html
-   */
-  Serial.print("IMSI: ");
-  Serial.println(nbiot.imsi());
-  Serial.print("IMEI: ");
-  Serial.println(nbiot.imei());
+  // Set radio technology to NB-IoT
+  Serial.println("Set radio technology to NB-IoT (7 is for Cat M1 and 8 is for NB-IoT): ");
+  MODEM.send("AT+URAT=8");
+  MODEM.waitForResponse(100, &response);
+  Serial.println(response);
 
-  nbiot.createSocket();
+  // Set APN to MIC APN
+  Serial.println("Set to mda.ee: ");
+  MODEM.send("AT+CGDCONT=1,\"IP\",\"mda.ee\"");
+  MODEM.waitForResponse(100, &response);
+  Serial.println(response);
+
+  // Set operator to Telenor
+  Serial.println("Set operator to Telenor: ");
+  MODEM.send("AT+COPS=1,2,\"24201\"");
+  MODEM.waitForResponse(100, &response);
+  Serial.println(response);
+
+  Serial.println("Try to connect...");
+  boolean connected = false;
+  while (!connected) {
+    if (gprs.attachGPRS() == GPRS_READY) {
+      Serial.println("Connected!");
+      connected = true;
+    } else {
+      Serial.println("Not connected");
+      delay(1000);
+    }
+  }
+
+  Serial.println("\nSetup socket for connection to MIC...");
+  Udp.begin(MICUdpPort);
+
+  // Seed random number generator with noise from pin 0
+  randomSeed(analogRead(0));
 }
 
 void loop() 
@@ -248,7 +276,7 @@ void loop()
   }
 
   printMPRLSData();
-
+  /*
   if (nbiot.isConnected()) {
     // Set tries count to 0
     Tries = 0;
@@ -277,7 +305,51 @@ void loop()
     Serial.println("Connecting...");
     delay(5000);
   }
+  */
+  int size = 0;
+  
+  Serial.print("Send packet to MIC: ");
+  sendMICUDPpacket(MIC_IP);
+  /*
+  Serial.println("Check if we have received something..");
+  size = receiveMICUDPpacket();
+  if (size > 0) {
+    Serial.println("Received packet...");
+    String bufferString = String((char *) packetBuffer);
+    Serial.println("Packet data is: <" + bufferString + ">");
+  } else {
+    Serial.println("No data received...");
+  }
+  // Wait 30 seconds before Sending again
+
+  Serial.println("Wait 30s before sending again....");
+  delay(30000);
+  */
   delay(1000);
+}
+
+unsigned long sendMICUDPpacket(IPAddress& address) {
+  String p1, p2, p3, p4, payload = "";
+  String comma = ",";
+  float hum, tmp, r = 0.0;
+
+  p1 = "Hello";
+  hum = 24;
+  r = random(0, 9);
+  r = r / 10;
+  hum = hum + r;
+  p2 = hum;
+  tmp = 20;
+  r = random(0, 9);
+  r = r / 10;
+  tmp = tmp + r;
+  p3 = tmp;
+
+  payload = p1 + comma + p2 + comma + p3;
+  Serial.println("payload is: " + payload);
+  Udp.beginPacket(address, MICUdpPort);
+  Udp.write(payload.c_str(), payload.length());
+  Udp.endPacket();
 }
 
 void printMPRLSData(void)
