@@ -37,7 +37,7 @@ void setup() {
   NB_NetworkStatus_t modemStatus;
   for (modemStatus = nbAccess.begin(PINNUMBER); modemStatus != NB_READY; modemStatus = nbAccess.begin(PINNUMBER)) {
     Serial.println("Modem not ready, retrying in 2s...");
-    delay(2000);
+    delay(5000);
   }
 
   // Set radio technology to NB-IoT
@@ -69,6 +69,9 @@ void setup() {
       delay(1000);
     }
   }
+
+  Serial.println(MODEM.imei());
+  Serial.println(MODEM.imsi());
 
   Serial.println("\nSetup socket for connection to MIC...");
   Udp.begin(MICUdpPort);
