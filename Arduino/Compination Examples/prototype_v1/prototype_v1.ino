@@ -66,6 +66,9 @@ unsigned long milliTime = 0;
 
 
 enum SensorArray { AccelerometerIndex , PressureIndex };
+enum SensorDataTypes { SD_Yaw, SD_Pitch, SD_Roll, SD_Ax, SD_Ay, SD_Az, SD_hPa, SD_PSI, SD_mH2O };
+
+float SensorData[9];
 
 // Setup of microcontroller and device communictions
 void setup() 
@@ -153,6 +156,7 @@ void setup()
   // Check if modem is ready
   NB_NetworkStatus_t modemStatus;
   for (modemStatus = nbAccess.begin(PINNUMBER); modemStatus != NB_READY; modemStatus = nbAccess.begin(PINNUMBER)) {
+    MODEM.reset();
     Serial.println("Modem not ready, retrying in 2s...");
     delay(2000);
   }
@@ -197,6 +201,7 @@ void setup()
   Setup of Program specific
   *************************************************************/
   milliTime = millis();
+  memset(SensorData, 0, sizeof(SensorData));
 }
 
 void loop() 
@@ -290,38 +295,47 @@ void loop()
   }
   
   Serial.println("E");
-  delay(1 * 100);
+  delay(5 * 1000);
   
 }
 
 unsigned long sendMICUDPpacket(IPAddress& address) {
-  String p1, p2, p3, p4, payload = "";
+  String payload = "";
   String comma = ",";
-  float hum, tmp, r = 0.0;
 
-  p1 = "Hello";
-  hum = 24;
-  r = random(0, 9);
-  r = r / 10;
-  hum = hum + r;
-  p2 = hum;
-  tmp = 20;
-  r = random(0, 9);
-  r = r / 10;
-  tmp = tmp + r;
-  p3 = tmp;
+  payload += MyId + comma + milliTime + comma;
 
-  payload = p1 + comma + p2 + comma + p3;
+  String text = updatePacketString(payload);
+
+  Serial.println(text);
+
+  payload = text;
   Serial.println("payload is: " + payload);
   Udp.beginPacket(address, MICUdpPort);
   Udp.write(payload.c_str(), payload.length());
   Udp.endPacket();
 }
 
+String updatePacketString(String startString) 
+{
+  String retString = startString;
+  String comma = ",";
+  int arraySize = sizeof(SensorData) / sizeof(SensorData[0]);
+  int i;
+  retString += SensorData[0];
+
+  for (i = 1; i < arraySize; i++) {
+    retString += comma;
+    retString += SensorData[i];
+  }
+  return retString;
+}
+
 void updateJSONTime(void)
 {
   milliTime = millis();
-  root["time"] = milliTime;
+  //root["time"] = milliTime;
+
 }
 
 void updateAccelerometerInformation(void)
@@ -346,13 +360,18 @@ void updateAcclInformation(void)
 
 
   Serial.println("Collected Info");
+
+  SensorData[SD_Ax] = accelX;
+  SensorData[SD_Ay] = accelY;
+  SensorData[SD_Az] = accelZ;
   //dataString = "{\"ax\":" + (String)accelX + ",\"ay\":" + (String)accelY + ",\"az\":" + (String)accelZ + ",\"gx\":" + (String)gyroX + ",\"gy\":" + (String)gyroY + ",\"gz\":" + (String)gyroZ + ",\"mx\":" + (String)magX + ",\"my\":" + (String)magY + ",\"mz\":" + (String)magZ + "}";
 
   //root["data"]["sensors"][(String)AccelerometerIndex]["data"]["accl"] = dataString;
-  
+  /*
   root["data"]["sensors"][(String)AccelerometerIndex]["data"]["ax"] = accelX;
   root["data"]["sensors"][(String)AccelerometerIndex]["data"]["ay"] = accelY;
   root["data"]["sensors"][(String)AccelerometerIndex]["data"]["az"] = accelZ;
+  */
   /*
   root["data"]["sensors"][(String)AccelerometerIndex]["data"]["gx"] = gyroX;
   root["data"]["sensors"][(String)AccelerometerIndex]["data"]["gy"] = gyroY;
@@ -381,9 +400,14 @@ void updateQuatInformation(void)
 
   //root["data"]["sensors"][(String)AccelerometerIndex]["data"]["quat"] = dataString;
   
-  root["data"]["sensors"][(String)AccelerometerIndex]["data"]["roll"] = imu.roll;
-  root["data"]["sensors"][(String)AccelerometerIndex]["data"]["pitch"] = imu.pitch;
-  root["data"]["sensors"][(String)AccelerometerIndex]["data"]["yaw"] = imu.yaw;
+  //root["data"]["sensors"][(String)AccelerometerIndex]["data"]["roll"] = imu.roll;
+  //root["data"]["sensors"][(String)AccelerometerIndex]["data"]["pitch"] = imu.pitch;
+  //root["data"]["sensors"][(String)AccelerometerIndex]["data"]["yaw"] = imu.yaw;
+
+  SensorData[SD_Yaw] = imu.yaw;
+  SensorData[SD_Pitch] = imu.pitch;
+  SensorData[SD_Roll] = imu.roll;
+  
   
 }
 
@@ -398,9 +422,15 @@ void updateMPRLSInformation(void)
   //dataString = "[" + (String)pressure_hPa + "," + (String)pressure_psi + "]";
 
   //root["data"]["sensors"][(String)PressureIndex]["data"] = dataString;
+  /*
   root["data"]["sensors"][(String)PressureIndex]["data"]["hPa"] = pressure_hPa;
   root["data"]["sensors"][(String)PressureIndex]["data"]["PSI"] = pressure_psi;
   root["data"]["sensors"][(String)PressureIndex]["data"]["mH2O"] = pressure_mh2o;
+  */
+  SensorData[SD_hPa] = pressure_hPa;
+  SensorData[SD_PSI] = pressure_psi;
+  SensorData[SD_mH2O] = pressure_mh2o;
+
 }
 
 void printMPRLSData(void)
