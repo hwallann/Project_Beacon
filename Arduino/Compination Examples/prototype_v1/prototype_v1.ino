@@ -64,6 +64,9 @@ JsonObject& root = jsonBuffer.parseObject(InitalString);
 int MyId = 1;
 unsigned long milliTime = 0;
 
+unsigned long CurrentRound = 0;
+unsigned int TimeToNextRound = 5;
+
 
 enum SensorArray { AccelerometerIndex , PressureIndex };
 enum SensorDataTypes { SD_Yaw, SD_Pitch, SD_Roll, SD_Ax, SD_Ay, SD_Az, SD_hPa, SD_PSI, SD_mH2O };
@@ -258,8 +261,14 @@ void loop()
   {
     // Set tries count to 0
     Tries = 0;
-    // Successfully connected to the network
 
+    TimeToNextRound--;
+    if (TimeToNextRound == 0){
+      CurrentRound++;
+      TimeToNextRound = 5;
+    }
+
+    // Successfully connected to the network
     // Send message to remote server
     int size = 0;
   
@@ -303,7 +312,7 @@ unsigned long sendMICUDPpacket(IPAddress& address) {
   String payload = "";
   String comma = ",";
 
-  payload += MyId + comma + milliTime + comma;
+  payload += MyId + comma + milliTime + comma + CurrentRound + comma;
 
   String text = updatePacketString(payload);
 
