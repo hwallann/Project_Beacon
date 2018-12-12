@@ -65,8 +65,8 @@
 282		currentRound 12		Min: 5.0, Sec: 42.0, Milli: 649.0		Date2018-12-10 21:12:21
 283		currentRound 13		Min: 5.0, Sec: 47.0, Milli: 715.0		Date2018-12-10 21:12:21
 284		currentRound 13		Min: 5.0, Sec: 52.0, Milli: 827.0		Date2018-12-10 21:12:22
----------------------------------------------------------------------------------------------------
 285		currentRound 13		Min: 5.0, Sec: 57.0, Milli: 893.0		Date2018-12-10 21:12:23
+---------------------------------------------------------------------------------------------------
 286		currentRound 13		Min: 6.0, Sec: 3.0, Milli: 185.0		Date2018-12-10 21:12:23
 287		currentRound 13		Min: 6.0, Sec: 8.0, Milli: 255.0		Date2018-12-10 21:12:24
 288		currentRound 14		Min: 6.0, Sec: 13.0, Milli: 366.0		Date2018-12-10 21:12:24
@@ -76,6 +76,7 @@
 293		currentRound 15		Min: 6.0, Sec: 38.0, Milli: 783.0		Date2018-12-10 21:13:08
 294		currentRound 15		Min: 6.0, Sec: 43.0, Milli: 894.0		Date2018-12-10 21:13:09
 295		currentRound 15		Min: 6.0, Sec: 48.0, Milli: 958.0		Date2018-12-10 21:13:09
+---------------------------------------------------------------------------------------------------	Start: 0 cm depth
 296		currentRound 15		Min: 7.0, Sec: 14.0, Milli: 318.0		Date2018-12-10 21:13:10
 297		currentRound 15		Min: 7.0, Sec: 19.0, Milli: 382.0		Date2018-12-10 21:13:25
 298		currentRound 16		Min: 7.0, Sec: 24.0, Milli: 492.0		Date2018-12-10 21:13:30
@@ -86,6 +87,7 @@
 303		currentRound 17		Min: 7.0, Sec: 49.0, Milli: 907.0		Date2018-12-10 21:14:12
 304		currentRound 17		Min: 7.0, Sec: 55.0, Milli: 17.0		Date2018-12-10 21:14:13
 305		currentRound 17		Min: 8.0, Sec: 0.0, Milli: 309.0		Date2018-12-10 21:14:13
+--------------------------------------------------------------------------------------------------- Start: 10 cm depth
 306		currentRound 17		Min: 8.0, Sec: 5.0, Milli: 374.0		Date2018-12-10 21:14:14
 307		currentRound 17		Min: 8.0, Sec: 10.0, Milli: 485.0		Date2018-12-10 21:14:16
 308		currentRound 18		Min: 8.0, Sec: 15.0, Milli: 549.0		Date2018-12-10 21:14:22
@@ -97,6 +99,7 @@
 315		currentRound 19		Min: 8.0, Sec: 51.0, Milli: 185.0		Date2018-12-10 21:18:19
 316		currentRound 19		Min: 8.0, Sec: 56.0, Milli: 249.0		Date2018-12-10 21:19:35
 317		currentRound 19		Min: 9.0, Sec: 1.0, Milli: 360.0		Date2018-12-10 21:19:36
+--------------------------------------------------------------------------------------------------- Start: 20 cm depth
 318		currentRound 20		Min: 9.0, Sec: 6.0, Milli: 425.0		Date2018-12-10 21:19:37
 319		currentRound 20		Min: 9.0, Sec: 11.0, Milli: 536.0		Date2018-12-10 21:19:37
 320		currentRound 20		Min: 9.0, Sec: 16.0, Milli: 601.0		Date2018-12-10 21:19:38
@@ -107,6 +110,7 @@
 325		currentRound 21		Min: 9.0, Sec: 42.0, Milli: 63.0		Date2018-12-10 21:19:41
 326		currentRound 21		Min: 9.0, Sec: 47.0, Milli: 128.0		Date2018-12-10 21:19:42
 327		currentRound 21		Min: 9.0, Sec: 52.0, Milli: 239.0		Date2018-12-10 21:19:42
+--------------------------------------------------------------------------------------------------- Start: 30 cm depth
 328		currentRound 22		Min: 10.0, Sec: 17.0, Milli: 599.0		Date2018-12-10 21:19:43
 329		currentRound 22		Min: 10.0, Sec: 22.0, Milli: 663.0		Date2018-12-10 21:19:43
 330		currentRound 22		Min: 10.0, Sec: 27.0, Milli: 774.0		Date2018-12-10 21:19:44
@@ -116,6 +120,7 @@
 334		currentRound 23		Min: 10.0, Sec: 48.0, Milli: 126.0		Date2018-12-10 21:20:28
 335		currentRound 23		Min: 10.0, Sec: 53.0, Milli: 191.0		Date2018-12-10 21:20:29
 336		currentRound 23		Min: 10.0, Sec: 58.0, Milli: 302.0		Date2018-12-10 21:20:30
+--------------------------------------------------------------------------------------------------- Start: 40 cm depth
 337		currentRound 23		Min: 11.0, Sec: 3.0, Milli: 367.0		Date2018-12-10 21:20:30
 338		currentRound 24		Min: 11.0, Sec: 8.0, Milli: 477.0		Date2018-12-10 21:20:31
 339		currentRound 24		Min: 11.0, Sec: 13.0, Milli: 542.0		Date2018-12-10 21:20:32
@@ -126,6 +131,7 @@
 344		currentRound 25		Min: 11.0, Sec: 39.0, Milli: 5.0		Date2018-12-10 21:20:35
 345		currentRound 25		Min: 12.0, Sec: 4.0, Milli: 365.0		Date2018-12-10 21:20:35
 346		currentRound 25		Min: 12.0, Sec: 9.0, Milli: 430.0		Date2018-12-10 21:21:18
+--------------------------------------------------------------------------------------------------- Stop
 347		currentRound 25		Min: 12.0, Sec: 14.0, Milli: 541.0		Date2018-12-10 21:21:18
 348		currentRound 26		Min: 12.0, Sec: 19.0, Milli: 606.0		Date2018-12-10 21:21:19
 349		currentRound 26		Min: 12.0, Sec: 24.0, Milli: 717.0		Date2018-12-10 21:21:20
@@ -257,6 +263,7 @@
 475		currentRound 51		Min: 23.0, Sec: 27.0, Milli: 407.0		Date2018-12-10 21:49:21
 476		currentRound 51		Min: 23.0, Sec: 32.0, Milli: 518.0		Date2018-12-10 21:49:21
 477		currentRound 51		Min: 23.0, Sec: 37.0, Milli: 584.0		Date2018-12-10 21:49:22
+--------------------------------------------------------------------------------------------------- Start: 50 cm depth
 478		currentRound 52		Min: 24.0, Sec: 2.0, Milli: 944.0		Date2018-12-10 21:49:22
 479		currentRound 52		Min: 24.0, Sec: 8.0, Milli: 10.0		Date2018-12-10 21:49:23
 480		currentRound 52		Min: 24.0, Sec: 13.0, Milli: 121.0		Date2018-12-10 21:49:23
@@ -269,6 +276,7 @@
 487		currentRound 53		Min: 24.0, Sec: 48.0, Milli: 714.0		Date2018-12-10 21:50:05
 488		currentRound 54		Min: 24.0, Sec: 53.0, Milli: 825.0		Date2018-12-10 21:50:06
 489		currentRound 54		Min: 24.0, Sec: 58.0, Milli: 890.0		Date2018-12-10 21:50:06
+----------------------------------------------------------------------------------------------- Connection upheld
 490		currentRound 54		Min: 25.0, Sec: 4.0, Milli: 1.0		Date2018-12-10 21:50:07
 491		currentRound 54		Min: 25.0, Sec: 9.0, Milli: 66.0		Date2018-12-10 21:50:07
 492		currentRound 54		Min: 25.0, Sec: 14.0, Milli: 177.0		Date2018-12-10 21:50:08
@@ -279,6 +287,7 @@
 497		currentRound 55		Min: 25.0, Sec: 39.0, Milli: 591.0		Date2018-12-10 21:50:11
 498		currentRound 56		Min: 25.0, Sec: 44.0, Milli: 702.0		Date2018-12-10 21:50:11
 499		currentRound 56		Min: 25.0, Sec: 49.0, Milli: 767.0		Date2018-12-10 21:50:12
+----------------------------------------------------------------------------------------------- Connection lost
 500		currentRound 56		Min: 26.0, Sec: 15.0, Milli: 127.0		Date2018-12-10 21:50:12
 501		currentRound 56		Min: 26.0, Sec: 20.0, Milli: 193.0		Date2018-12-10 21:50:13
 502		currentRound 56		Min: 26.0, Sec: 25.0, Milli: 305.0		Date2018-12-10 21:50:14
@@ -288,6 +297,7 @@
 506		currentRound 57		Min: 26.0, Sec: 45.0, Milli: 658.0		Date2018-12-10 21:50:56
 507		currentRound 57		Min: 26.0, Sec: 50.0, Milli: 723.0		Date2018-12-10 21:50:57
 508		currentRound 58		Min: 26.0, Sec: 55.0, Milli: 834.0		Date2018-12-10 21:50:57
+--------------------------------------------------------------------------------------------------- Stop: 50 cm depth
 509		currentRound 58		Min: 27.0, Sec: 0.0, Milli: 899.0		Date2018-12-10 21:50:58
 510		currentRound 58		Min: 27.0, Sec: 6.0, Milli: 10.0		Date2018-12-10 21:50:59
 511		currentRound 58		Min: 27.0, Sec: 11.0, Milli: 75.0		Date2018-12-10 21:50:59
