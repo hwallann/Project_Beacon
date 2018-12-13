@@ -127,9 +127,7 @@ void loop()
     }
     timeToIncreaseSize -= 1;
 
-    if (MessageSizeIteration == 1) {
-      CurrentRound += 1;
-    }
+    CurrentRound += 1;
 
     // Set tries count to 0
     Tries = 0;
@@ -173,6 +171,7 @@ unsigned long sendMICUDPpacket(IPAddress& address, unsigned long size, unsigned 
   Serial.println(payload);
 
   Serial.println("Begin to send");
+
   Udp.beginPacket(address, MICUdpPort);
   Udp.write(payload, size*100);
   Udp.endPacket();
@@ -183,19 +182,22 @@ unsigned long sendMICUDPpacket(IPAddress& address, unsigned long size, unsigned 
 
 char *createMessageToSend(unsigned long size, unsigned long round) {
   Serial.println("Creating message");
+  
+  milliTime = millis();
   char *message = (char*)calloc(size * 100, sizeof(char));
+  
   if (message == NULL) {
     Serial.println("Failed to allocate memory");
     return NULL;
   }
   char startMessage[50];
   int sLength = 0;
-  sLength = sprintf(startMessage, " Round: %u, Size: %u", round, size);
+  sLength = sprintf(startMessage, "%d,%u,%u,%u,Round: %u, Size: %u,", MyId, milliTime, round, size, round, size);
+  Serial.println(sLength);
   int toFill = (size * 100) - sLength;
-  
-  memset(message, '-', toFill - 1);
 
-  strcat(message, startMessage);
+  strcpy(message, startMessage);
+  memset(&message[sLength], '-', toFill - 1);
 
   message[(size*100) - 1] = '\0';
 

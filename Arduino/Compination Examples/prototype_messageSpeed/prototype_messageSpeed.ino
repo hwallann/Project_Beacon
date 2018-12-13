@@ -186,6 +186,8 @@ unsigned long sendMICUDPpacket(IPAddress& address, unsigned long speed, unsigned
 
 char *createMessageToSend(unsigned long speed, unsigned long round) {
   Serial.println("Creating message");
+
+  milliTime = millis();
   char *message = (char*)calloc(100, sizeof(char));
   if (message == NULL) {
     Serial.println("Failed to allocate memory");
@@ -193,12 +195,12 @@ char *createMessageToSend(unsigned long speed, unsigned long round) {
   }
   char startMessage[100];
   int sLength = 0;
-  sLength = sprintf(startMessage, " Round: %u, Speed: %u", round, speed);
+  sLength = sprintf(startMessage, "%d,%u,%u,%u,Round: %u, Speed: %u,", MyId, milliTime, round, speed, round, speed);
+  Serial.println(sLength);
   int toFill = 100 - sLength;
   
-  memset(message, '-', toFill - 1);
-
-  strcat(message, startMessage);
+  strcpy(message, startMessage);
+  memset(&message[sLength], '-', toFill - 1);
 
   message[100 - 1] = '\0';
 
