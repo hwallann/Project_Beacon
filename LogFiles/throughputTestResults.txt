@@ -278,6 +278,7 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 265		currentRound 6		TestType Speed		TestSpec 1000		Min: 0.0, Sec: 59.0, Milli: 766.0		Date2018-12-12 21:12:55
 ----------------------------------------------------------------------------------------------------------------------------------------------	Start Speed: 0 cm depth
 266		currentRound 7		TestType Speed		TestSpec 1000		Min: 1.0, Sec: 8.0, Milli: 818.0		Date2018-12-12 21:12:57
+------------------------------------------------------------------------------------------------------------------------------------------- Connection lost
 267		currentRound 8		TestType Speed		TestSpec 1000		Min: 1.0, Sec: 42.0, Milli: 45.0		Date2018-12-12 21:14:05
 268		currentRound 9		TestType Speed		TestSpec 1000		Min: 1.0, Sec: 51.0, Milli: 97.0		Date2018-12-12 21:14:05
 269		currentRound 10		TestType Speed		TestSpec 1000		Min: 2.0, Sec: 0.0, Milli: 150.0		Date2018-12-12 21:14:06
@@ -291,6 +292,7 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 277		currentRound 18		TestType Speed		TestSpec 3000		Min: 3.0, Sec: 3.0, Milli: 742.0		Date2018-12-12 21:15:02
 278		currentRound 19		TestType Speed		TestSpec 3000		Min: 3.0, Sec: 10.0, Milli: 794.0		Date2018-12-12 21:15:03
 279		currentRound 20		TestType Speed		TestSpec 3000		Min: 3.0, Sec: 17.0, Milli: 846.0		Date2018-12-12 21:15:03
+------------------------------------------------------------------------------------------------------------------------------------------- Connection Upheld
 280		currentRound 21		TestType Speed		TestSpec 4000		Min: 3.0, Sec: 24.0, Milli: 898.0		Date2018-12-12 21:15:52
 281		currentRound 22		TestType Speed		TestSpec 4000		Min: 3.0, Sec: 30.0, Milli: 950.0		Date2018-12-12 21:15:53
 282		currentRound 23		TestType Speed		TestSpec 4000		Min: 3.0, Sec: 37.0, Milli: 2.0		Date2018-12-12 21:15:56
@@ -301,32 +303,38 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 287		currentRound 28		TestType Speed		TestSpec 5000		Min: 4.0, Sec: 26.0, Milli: 440.0		Date2018-12-12 21:17:03
 288		currentRound 29		TestType Speed		TestSpec 5000		Min: 4.0, Sec: 31.0, Milli: 493.0		Date2018-12-12 21:17:07
 289		currentRound 30		TestType Speed		TestSpec 5000		Min: 4.0, Sec: 36.0, Milli: 546.0		Date2018-12-12 21:18:21
+------------------------------------------------------------------------------------------------------------------------------------------- Connection Upheld
 290		currentRound 31		TestType Speed		TestSpec 6000		Min: 4.0, Sec: 41.0, Milli: 599.0		Date2018-12-12 21:18:22
 291		currentRound 32		TestType Speed		TestSpec 6000		Min: 4.0, Sec: 45.0, Milli: 828.0		Date2018-12-12 21:18:25
 292		currentRound 33		TestType Speed		TestSpec 6000		Min: 4.0, Sec: 49.0, Milli: 883.0		Date2018-12-12 21:18:28
 293		currentRound 34		TestType Speed		TestSpec 6000		Min: 4.0, Sec: 53.0, Milli: 935.0		Date2018-12-12 21:19:27
 294		currentRound 35		TestType Speed		TestSpec 6000		Min: 4.0, Sec: 57.0, Milli: 987.0		Date2018-12-12 21:19:27
+------------------------------------------------------------------------------------------------------------------------------------------- Connection Upheld
 295		currentRound 36		TestType Speed		TestSpec 7000		Min: 5.0, Sec: 2.0, Milli: 39.0		Date2018-12-12 21:19:28
 296		currentRound 37		TestType Speed		TestSpec 7000		Min: 5.0, Sec: 5.0, Milli: 91.0		Date2018-12-12 21:19:29
 297		currentRound 38		TestType Speed		TestSpec 7000		Min: 5.0, Sec: 8.0, Milli: 144.0		Date2018-12-12 21:19:29
 298		currentRound 39		TestType Speed		TestSpec 7000		Min: 5.0, Sec: 11.0, Milli: 196.0		Date2018-12-12 21:19:30
 299		currentRound 40		TestType Speed		TestSpec 7000		Min: 5.0, Sec: 14.0, Milli: 248.0		Date2018-12-12 21:19:30
+------------------------------------------------------------------------------------------------------------------------------------------- Connection Upheld
 300		currentRound 41		TestType Speed		TestSpec 8000		Min: 5.0, Sec: 17.0, Milli: 300.0		Date2018-12-12 21:19:31
 301		currentRound 42		TestType Speed		TestSpec 8000		Min: 5.0, Sec: 19.0, Milli: 353.0		Date2018-12-12 21:19:32
 302		currentRound 43		TestType Speed		TestSpec 8000		Min: 5.0, Sec: 21.0, Milli: 404.0		Date2018-12-12 21:19:32
 303		currentRound 44		TestType Speed		TestSpec 8000		Min: 5.0, Sec: 23.0, Milli: 456.0		Date2018-12-12 21:19:33
 304		currentRound 45		TestType Speed		TestSpec 8000		Min: 5.0, Sec: 25.0, Milli: 508.0		Date2018-12-12 21:19:34
+------------------------------------------------------------------------------------------------------------------------------------------- Connection Upheld
 305		currentRound 46		TestType Speed		TestSpec 9000		Min: 5.0, Sec: 27.0, Milli: 560.0		Date2018-12-12 21:19:35
 306		currentRound 47		TestType Speed		TestSpec 9000		Min: 5.0, Sec: 28.0, Milli: 612.0		Date2018-12-12 21:19:35
 307		currentRound 48		TestType Speed		TestSpec 9000		Min: 5.0, Sec: 29.0, Milli: 664.0		Date2018-12-12 21:20:22
 308		currentRound 49		TestType Speed		TestSpec 9000		Min: 5.0, Sec: 30.0, Milli: 717.0		Date2018-12-12 21:20:23
 309		currentRound 50		TestType Speed		TestSpec 9000		Min: 5.0, Sec: 31.0, Milli: 769.0		Date2018-12-12 21:20:25
+------------------------------------------------------------------------------------------------------------------------------------------- Connection Upheld
 310		currentRound 51		TestType Speed		TestSpec 9100		Min: 5.0, Sec: 32.0, Milli: 821.0		Date2018-12-12 21:20:29
 311		currentRound 52		TestType Speed		TestSpec 9100		Min: 5.0, Sec: 33.0, Milli: 773.0		Date2018-12-12 21:20:29
 312		currentRound 53		TestType Speed		TestSpec 9100		Min: 5.0, Sec: 34.0, Milli: 725.0		Date2018-12-12 21:21:28
 313		currentRound 54		TestType Speed		TestSpec 9100		Min: 5.0, Sec: 35.0, Milli: 677.0		Date2018-12-12 21:21:29
 314		currentRound 55		TestType Speed		TestSpec 9100		Min: 5.0, Sec: 36.0, Milli: 630.0		Date2018-12-12 21:21:31
 315		currentRound 56		TestType Speed		TestSpec 9200		Min: 5.0, Sec: 37.0, Milli: 582.0		Date2018-12-12 21:21:35
+------------------------------------------------------------------------------------------------------------------------------------------- Connection lost
 316		currentRound 57		TestType Speed		TestSpec 9200		Min: 5.0, Sec: 54.0, Milli: 409.0		Date2018-12-12 21:21:38
 317		currentRound 58		TestType Speed		TestSpec 9200		Min: 5.0, Sec: 55.0, Milli: 261.0		Date2018-12-12 21:22:30
 318		currentRound 59		TestType Speed		TestSpec 9200		Min: 5.0, Sec: 56.0, Milli: 113.0		Date2018-12-12 21:22:31
@@ -346,6 +354,7 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 332		currentRound 73		TestType Speed		TestSpec 9500		Min: 6.0, Sec: 5.0, Milli: 942.0		Date2018-12-12 21:25:45
 333		currentRound 74		TestType Speed		TestSpec 9500		Min: 6.0, Sec: 6.0, Milli: 494.0		Date2018-12-12 21:26:41
 334		currentRound 75		TestType Speed		TestSpec 9500		Min: 6.0, Sec: 7.0, Milli: 46.0		Date2018-12-12 21:26:42
+------------------------------------------------------------------------------------------------------------------------------------------- Connection Upheld
 335		currentRound 76		TestType Speed		TestSpec 0		Min: 6.0, Sec: 7.0, Milli: 598.0		Date2018-12-12 21:26:42
 336		currentRound 77		TestType Speed		TestSpec 0		Min: 6.0, Sec: 17.0, Milli: 651.0		Date2018-12-12 21:26:45
 337		currentRound 78		TestType Speed		TestSpec 0		Min: 6.0, Sec: 27.0, Milli: 703.0		Date2018-12-12 21:28:00
@@ -360,6 +369,7 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 345		currentRound 86		TestType Speed		TestSpec 2000		Min: 7.0, Sec: 43.0, Milli: 298.0		Date2018-12-12 21:29:00
 346		currentRound 87		TestType Speed		TestSpec 2000		Min: 7.0, Sec: 51.0, Milli: 350.0		Date2018-12-12 21:29:01
 347		currentRound 88		TestType Speed		TestSpec 2000		Min: 7.0, Sec: 59.0, Milli: 402.0		Date2018-12-12 21:29:03
+------------------------------------------------------------------------------------------------------------------------------------------- Connection lost
 348		currentRound 89		TestType Speed		TestSpec 2000		Min: 8.0, Sec: 30.0, Milli: 629.0		Date2018-12-12 21:29:50
 349		currentRound 90		TestType Speed		TestSpec 2000		Min: 8.0, Sec: 38.0, Milli: 681.0		Date2018-12-12 21:29:51
 350		currentRound 91		TestType Speed		TestSpec 3000		Min: 8.0, Sec: 46.0, Milli: 733.0		Date2018-12-12 21:29:52
@@ -399,6 +409,7 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 384		currentRound 125		TestType Speed		TestSpec 9000		Min: 11.0, Sec: 7.0, Milli: 866.0		Date2018-12-12 21:35:35
 385		currentRound 126		TestType Speed		TestSpec 9100		Min: 11.0, Sec: 8.0, Milli: 918.0		Date2018-12-12 21:35:35
 386		currentRound 127		TestType Speed		TestSpec 9100		Min: 11.0, Sec: 9.0, Milli: 870.0		Date2018-12-12 21:35:36
+------------------------------------------------------------------------------------------------------------------------------------------- Connection lost
 387		currentRound 128		TestType Speed		TestSpec 9100		Min: 11.0, Sec: 26.0, Milli: 897.0		Date2018-12-12 21:35:39
 388		currentRound 129		TestType Speed		TestSpec 9100		Min: 11.0, Sec: 27.0, Milli: 849.0		Date2018-12-12 21:36:23
 389		currentRound 130		TestType Speed		TestSpec 9100		Min: 11.0, Sec: 28.0, Milli: 802.0		Date2018-12-12 21:36:23
@@ -433,6 +444,7 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 418		currentRound 159		TestType Speed		TestSpec 1000		Min: 13.0, Sec: 1.0, Milli: 390.0		Date2018-12-12 21:39:58
 419		currentRound 160		TestType Speed		TestSpec 1000		Min: 13.0, Sec: 10.0, Milli: 442.0		Date2018-12-12 21:39:59
 420		currentRound 161		TestType Speed		TestSpec 2000		Min: 13.0, Sec: 19.0, Milli: 494.0		Date2018-12-12 21:40:00
+------------------------------------------------------------------------------------------------------------------------------------------- Connection Upheld
 ----------------------------------------------------------------------------------------------------------------------------------------------	Start Speed: 20 cm depth
 421		currentRound 162		TestType Speed		TestSpec 2000		Min: 13.0, Sec: 27.0, Milli: 546.0		Date2018-12-12 21:40:00
 422		currentRound 163		TestType Speed		TestSpec 2000		Min: 13.0, Sec: 35.0, Milli: 598.0		Date2018-12-12 21:40:01
@@ -462,6 +474,7 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 446		currentRound 187		TestType Speed		TestSpec 7000		Min: 16.0, Sec: 16.0, Milli: 203.0		Date2018-12-12 21:42:38
 447		currentRound 188		TestType Speed		TestSpec 7000		Min: 16.0, Sec: 19.0, Milli: 255.0		Date2018-12-12 21:42:41
 448		currentRound 189		TestType Speed		TestSpec 7000		Min: 16.0, Sec: 22.0, Milli: 307.0		Date2018-12-12 21:44:03
+------------------------------------------------------------------------------------------------------------------------------------------- Connection lost
 449		currentRound 190		TestType Speed		TestSpec 7000		Min: 16.0, Sec: 43.0, Milli: 534.0		Date2018-12-12 21:44:04
 450		currentRound 191		TestType Speed		TestSpec 8000		Min: 16.0, Sec: 46.0, Milli: 586.0		Date2018-12-12 21:44:04
 451		currentRound 192		TestType Speed		TestSpec 8000		Min: 16.0, Sec: 48.0, Milli: 638.0		Date2018-12-12 21:44:05
@@ -471,7 +484,9 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 455		currentRound 196		TestType Speed		TestSpec 9000		Min: 16.0, Sec: 56.0, Milli: 848.0		Date2018-12-12 21:44:07
 456		currentRound 197		TestType Speed		TestSpec 9000		Min: 16.0, Sec: 57.0, Milli: 900.0		Date2018-12-12 21:44:51
 457		currentRound 198		TestType Speed		TestSpec 9000		Min: 16.0, Sec: 58.0, Milli: 952.0		Date2018-12-12 21:44:52
+------------------------------------------------------------------------------------------------------------------------------------------- Packages lost
 458		currentRound 230		TestType Speed		TestSpec 0		Min: 18.0, Sec: 1.0, Milli: 120.0		Date2018-12-12 21:44:52
+------------------------------------------------------------------------------------------------------------------------------------------- Packages lost
 459		currentRound 235		TestType Speed		TestSpec 1000		Min: 18.0, Sec: 47.0, Milli: 380.0		Date2018-12-12 21:44:53
 460		currentRound 236		TestType Speed		TestSpec 2000		Min: 18.0, Sec: 56.0, Milli: 432.0		Date2018-12-12 21:44:54
 461		currentRound 237		TestType Speed		TestSpec 2000		Min: 19.0, Sec: 4.0, Milli: 484.0		Date2018-12-12 21:44:55
@@ -501,15 +516,18 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 484		currentRound 264		TestType Speed		TestSpec 7000		Min: 21.0, Sec: 55.0, Milli: 417.0		Date2018-12-12 21:48:53
 485		currentRound 265		TestType Speed		TestSpec 7000		Min: 21.0, Sec: 58.0, Milli: 470.0		Date2018-12-12 21:48:53
 486		currentRound 266		TestType Speed		TestSpec 8000		Min: 22.0, Sec: 1.0, Milli: 521.0		Date2018-12-12 21:48:54
+------------------------------------------------------------------------------------------------------------------------------------------- Packages lost
 487		currentRound 303		TestType Speed		TestSpec 0		Min: 22.0, Sec: 56.0, Milli: 122.0		Date2018-12-12 21:48:55
 488		currentRound 304		TestType Speed		TestSpec 0		Min: 23.0, Sec: 6.0, Milli: 173.0		Date2018-12-12 21:48:56
 489		currentRound 305		TestType Speed		TestSpec 0		Min: 23.0, Sec: 16.0, Milli: 226.0		Date2018-12-12 21:48:56
 490		currentRound 306		TestType Speed		TestSpec 1000		Min: 23.0, Sec: 26.0, Milli: 278.0		Date2018-12-12 21:48:57
+------------------------------------------------------------------------------------------------------------------------------------------- Packages lost
 491		currentRound 310		TestType Speed		TestSpec 1000		Min: 24.0, Sec: 26.0, Milli: 660.0		Date2018-12-12 21:48:58
 492		currentRound 311		TestType Speed		TestSpec 2000		Min: 24.0, Sec: 35.0, Milli: 713.0		Date2018-12-12 21:48:59
 493		currentRound 312		TestType Speed		TestSpec 2000		Min: 24.0, Sec: 43.0, Milli: 765.0		Date2018-12-12 21:48:59
 494		currentRound 313		TestType Speed		TestSpec 2000		Min: 24.0, Sec: 51.0, Milli: 817.0		Date2018-12-12 21:49:49
 495		currentRound 314		TestType Speed		TestSpec 2000		Min: 24.0, Sec: 59.0, Milli: 869.0		Date2018-12-12 21:49:50
+------------------------------------------------------------------------------------------------------------------------------------------- Packages lost
 ----------------------------------------------------------------------------------------------------------------------------------------------	Start Speed: 40 cm depth
 496		currentRound 317		TestType Speed		TestSpec 3000		Min: 25.0, Sec: 23.0, Milli: 199.0		Date2018-12-12 21:49:51
 497		currentRound 318		TestType Speed		TestSpec 3000		Min: 25.0, Sec: 30.0, Milli: 252.0		Date2018-12-12 21:49:51
@@ -541,10 +559,13 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 523		currentRound 344		TestType Speed		TestSpec 8000		Min: 27.0, Sec: 28.0, Milli: 896.0		Date2018-12-12 21:51:43
 524		currentRound 345		TestType Speed		TestSpec 8000		Min: 27.0, Sec: 30.0, Milli: 948.0		Date2018-12-12 21:51:47
 525		currentRound 346		TestType Speed		TestSpec 9000		Min: 27.0, Sec: 32.0, Milli: 999.0		Date2018-12-12 21:52:56
+------------------------------------------------------------------------------------------------------------------------------------------- Packages lost
 526		currentRound 372		TestType Speed		TestSpec 9500		Min: 28.0, Sec: 10.0, Milli: 628.0		Date2018-12-12 21:52:56
 527		currentRound 373		TestType Speed		TestSpec 9500		Min: 28.0, Sec: 11.0, Milli: 180.0		Date2018-12-12 21:52:59
 528		currentRound 375		TestType Speed		TestSpec 9500		Min: 28.0, Sec: 12.0, Milli: 285.0		Date2018-12-12 21:53:03
+------------------------------------------------------------------------------------------------------------------------------------------- Packages lost
 529		currentRound 377		TestType Speed		TestSpec 0		Min: 28.0, Sec: 22.0, Milli: 888.0		Date2018-12-12 21:54:05
+------------------------------------------------------------------------------------------------------------------------------------------- Packages lost
 530		currentRound 381		TestType Speed		TestSpec 1000		Min: 29.0, Sec: 3.0, Milli: 96.0		Date2018-12-12 21:54:06
 531		currentRound 382		TestType Speed		TestSpec 1000		Min: 29.0, Sec: 12.0, Milli: 149.0		Date2018-12-12 21:54:06
 532		currentRound 383		TestType Speed		TestSpec 1000		Min: 29.0, Sec: 21.0, Milli: 200.0		Date2018-12-12 21:54:07
@@ -557,6 +578,7 @@ Namespace(fileName='Throughput_tests_ExtractedTimes', isJSON=True)
 539		currentRound 390		TestType Speed		TestSpec 2000		Min: 30.0, Sec: 20.0, Milli: 565.0		Date2018-12-12 21:54:11
 540		currentRound 391		TestType Speed		TestSpec 3000		Min: 30.0, Sec: 28.0, Milli: 617.0		Date2018-12-12 21:54:12
 541		currentRound 392		TestType Speed		TestSpec 3000		Min: 30.0, Sec: 35.0, Milli: 668.0		Date2018-12-12 21:54:14
+-> Broken Connection
 ----------------------------------------------------------------------------------------------------------------------------------------------
 542		currentRound 1		TestType Size		TestSpec 1		Min: 0.0, Sec: 9.0, Milli: 32.0		Date2018-12-12 21:57:25
 543		currentRound 2		TestType Size		TestSpec 1		Min: 0.0, Sec: 14.0, Milli: 84.0		Date2018-12-12 21:57:30
