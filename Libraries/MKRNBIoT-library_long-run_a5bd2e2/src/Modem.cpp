@@ -37,28 +37,34 @@ ModemClass::ModemClass(Uart& uart, unsigned long baud, int resetPin) :
 int ModemClass::begin(bool restart)
 {
   _uart->begin(_baud > 115200 ? 115200 : _baud);
+  Serial.println("MA");
   if (_resetPin > -1 && restart) {
+    Serial.println("MB");
     pinMode(_resetPin, OUTPUT);
     digitalWrite(_resetPin, HIGH);
     delay(100);
     digitalWrite(_resetPin, LOW);
   } else {
     if (!autosense()) {
+      Serial.println("MC");
       return 0;
     }
 
     if (!reset()) {
+      Serial.println("MD");
       return 0;
     }
   }
 
   if (!autosense()) {
+    Serial.println("ME");
     return 0;
   }
 
   if (_baud > 115200) {
     sendf("AT+IPR=%ld", _baud);
     if (waitForResponse() != 1) {
+      Serial.println("MF");
       return 0;
     }
 
@@ -67,6 +73,7 @@ int ModemClass::begin(bool restart)
     _uart->begin(_baud);
 
     if (!autosense()) {
+      Serial.println("MG");
       return 0;
     }
   }

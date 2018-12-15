@@ -49,14 +49,19 @@ NB::NB(bool debug) :
 
 NB_NetworkStatus_t NB::begin(const char* pin, bool restart, bool synchronous)
 {
+  Serial.println("A");
   if (!MODEM.begin(restart)) {
+    Serial.println("Modem failure");
     _state = ERROR;
   } else {
     _pin = pin;
     _state = IDLE;
     _readyState = READY_STATE_CHECK_SIM;
+    Serial.println("B");
     if (synchronous) {
+      Serial.println("C");
       while (ready() == 0) {
+        Serial.println("har");
         delay(100);
       }
     } else {
@@ -104,19 +109,24 @@ bool NB::secureShutdown()
 
 int NB::ready()
 {
+  Serial.println("RdY?");
   if (_state == ERROR) {
     return 2;
   }
 
+  Serial.println("Mdy?");
   int ready = MODEM.ready();
 
+  Serial.println("Nopey?");
   if (ready == 0) {
     return 0;
   }
+  Serial.println("Dopey?");
   MODEM.poll();
 
   switch (_readyState) {
     case READY_STATE_CHECK_SIM: {
+      Serial.println("Nopey?");
       MODEM.setResponseDataStorage(&_response);
       MODEM.send("AT+CPIN?");
       _readyState = READY_STATE_WAIT_CHECK_SIM_RESPONSE;
@@ -125,6 +135,7 @@ int NB::ready()
     }
 
     case READY_STATE_WAIT_CHECK_SIM_RESPONSE: {
+      Serial.println("Lopy?");
       if (ready > 1) {
         // error => retry
         _readyState = READY_STATE_CHECK_SIM;
@@ -146,6 +157,7 @@ int NB::ready()
     }
 
     case READY_STATE_UNLOCK_SIM: {
+      Serial.println("Gopey?");
       if (_pin != NULL) {
         MODEM.setResponseDataStorage(&_response);
         MODEM.sendf("AT+CPIN=\"%s\"", _pin);
@@ -160,6 +172,7 @@ int NB::ready()
     }
 
     case READY_STATE_WAIT_UNLOCK_SIM_RESPONSE: {
+      Serial.println("Sopey?");
       if (ready > 1) {
         _state = ERROR;
         ready = 2;
@@ -172,6 +185,7 @@ int NB::ready()
     }
 
     case READY_STATE_SET_HEX_MODE: {
+      Serial.println("Tropey?");
       MODEM.send("AT+UDCONF=1,1");
       _readyState = READY_STATE_WAIT_SET_HEX_MODE_RESPONSE;
       ready = 0;
@@ -179,6 +193,7 @@ int NB::ready()
     }
 
     case READY_STATE_WAIT_SET_HEX_MODE_RESPONSE: {
+      Serial.println("Ptuopey?");
       if (ready > 1) {
         _state = ERROR;
         ready = 2;
@@ -191,6 +206,7 @@ int NB::ready()
     }
 
     case READY_STATE_SET_AUTOMATIC_TIME_ZONE: {
+      Serial.println("Reloopey?");
       MODEM.send("AT+CTZU=1");
       _readyState = READY_STATE_WAIT_SET_AUTOMATIC_TIME_ZONE_RESPONSE;
       ready = 0;
@@ -198,6 +214,7 @@ int NB::ready()
     }
 
     case READY_STATE_WAIT_SET_AUTOMATIC_TIME_ZONE_RESPONSE: {
+      Serial.println("Soodopey?");
       if (ready > 1) {
         _state = ERROR;
         ready = 2;
@@ -209,6 +226,7 @@ int NB::ready()
     }
 
     case READY_STATE_CHECK_REGISTRATION: {
+      Serial.println("Qeropey?");
       MODEM.setResponseDataStorage(&_response);
       MODEM.send("AT+CEREG?");
       _readyState = READY_STATE_WAIT_CHECK_REGISTRATION_RESPONSE;
@@ -217,6 +235,7 @@ int NB::ready()
     }
 
     case READY_STATE_WAIT_CHECK_REGISTRATION_RESPONSE: {
+      Serial.println("Penelopey?");
       if (ready > 1) {
         _state = ERROR;
         ready = 2;
