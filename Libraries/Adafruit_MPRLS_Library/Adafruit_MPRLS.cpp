@@ -82,9 +82,7 @@ boolean Adafruit_MPRLS::begin(uint8_t i2c_addr, TwoWire *twoWire) {
 
   delay(10); // startup timing
 
-  //Serial.print("Status: ");
   uint8_t stat = readStatus();
-  //Serial.println(stat);
   return !(stat & 0b10011110);
 }
 
@@ -152,7 +150,6 @@ uint32_t Adafruit_MPRLS::readData(void) {
     // check the status byte
     uint8_t stat;
     while ((stat = readStatus()) & MPRLS_STATUS_BUSY) {
-      //Serial.print("Status: "); Serial.println(stat, HEX);
       delay(10);
     }
   }
