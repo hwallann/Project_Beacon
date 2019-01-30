@@ -1,0 +1,39 @@
+var variables = payload.toString('ascii').split(",");
+
+var yawF = parseFloat(variables[4])
+
+var pitchF = parseFloat(variables[5])
+
+var rollF = parseFloat(variables[6])
+
+var deviceIdInt = parseFloat(variables[0]);
+
+var deviceTimeULong = parseFloat(variables[1]);
+
+var currentRoundULong = parseFloat(variables[2]);
+
+var testSpecificationFloat = parseFloat(variables[3]);
+
+
+
+return {
+
+   payload: payload.toString('utf-8'),
+
+   deviceId: deviceIdInt,
+
+   deviceTime: deviceTimeULong,
+
+   currentRound: currentRoundULong,
+
+   testSpecification: testSpecificationFloat,
+
+   yaw: yawF,
+
+   pitch: pitchF,
+
+   roll: rollF,
+
+   timestamp: + new Date()
+
+};
